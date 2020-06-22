@@ -2,6 +2,10 @@ cmake_minimum_required(VERSION 2.8.12.1)
 
 set(CMAKE_CONFIGURATION_TYPES Debug Release)
 
+# I have a big Error such as `c++: error: unrecognized command line option ‘-msse2’` so let's tell the compiler that it is ARM
+SET(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -arch armv7")
+SET(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -arch armv7”)
+
 project(gstcef)
 
 set_property(GLOBAL PROPERTY OS_FOLDERS ON)
